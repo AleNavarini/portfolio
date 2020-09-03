@@ -1,0 +1,35 @@
+
+
+<div id="create-form">
+    <h1> Create New Project</h1>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Project Name: </label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="new_project.name" required>
+            <span class="error" *ngIf="name.touched && !name.valid">
+                Please enter a valid name for the project
+            </span>
+        </p>
+        <p>
+            <label for="description">Project Description: </label>
+            <textarea type="text" name="description" #description="ngModel" [(ngModel)]="new_project.description"
+                required></textarea> 
+                <span class="error" *ngIf="description.touched && !description.valid">
+                    Please enter a valid description for the project
+                </span>
+        </p>
+        <p>
+            <label for="repository">Project Repository: </label>
+            <input type="text" name="repository" #repository="ngModel" [(ngModel)]="new_project.repository"> 
+
+        </p>
+        <p>
+            <label for="tech">Project Technology: </label>
+            <input type="text" name="tech" #tech="ngModel" [(ngModel)]="new_project.tech" required> 
+            <span class="error" *ngIf="tech.touched && !tech.valid">
+                Please enter a valid technology for the project
+            </span>
+        </p>
+        <input type="submit" value="Add Project">
+    </form>
+</div>
