@@ -1,1 +1,11 @@
-<p>projects works!</p>
+<div>
+    <h2 style="margin-left: 20px;"> Projects: </h2>
+
+    <div class="project" *ngFor="let p of projects">
+        <h3>Project Name:  {{p.name}}</h3>
+        <hr> <br>
+        <p class="project-item"><strong>Description:</strong> {{p.description}}</p>
+        <p class="project-item"><strong>Repo:</strong> {{p.repository}}</p>
+        <p class="project-item"><strong>Technology:</strong> {{p.tech}}</p>
+    </div>
+</div>
